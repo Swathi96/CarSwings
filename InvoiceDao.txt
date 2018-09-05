@@ -1,0 +1,20 @@
+package com.DAO;
+
+import java.sql.*;
+
+import com.Entity.*;
+
+
+public class InvoiceDao {
+	
+	Connection con= null;
+	PreparedStatement ps=null;
+	Statement st=null;
+	ResultSet rs=null;
+	
+	public boolean InsertInvoice(InvoiceEntity entity)throws SQLException, Exception{
+
+		try{
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con=Dri

@@ -1,0 +1,25 @@
+package com.BAO;
+
+import com.DAO.InvoiceDao;
+import com.Entity.*;
+public class InvoiceBao {
+	InvoiceDao dao= new InvoiceDao();
+	
+	public boolean InsertInvoice(InvoiceEntity entity)throws Exception{
+		if(entity.getInvoiceNo()<=0)
+			throw new Exception("Invoice no cannot be negative or 0");
+		if(entity.getBillDate()==null)
+			throw new Exception("BillDate cannot be null");
+		if(entity.getCustomerID()<=0)
+			throw new Exception("Customer ID cannot be negative or 0");
+		if(entity.getEmpID()<=0)
+			throw new Exception("Emp id cannnot be negative or 0");
+		if(entity.getTotalAmount()<=0)
+			throw new Exception("TotalAmount cannnot be negative or 0");
+		if(entity.getPayMode()==null)
+			throw new Exception("Paymode cannot be null");
+			
+		return dao.InsertInvoice(entity);
+	}
+
+}

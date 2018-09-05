@@ -1,0 +1,44 @@
+package com.BAO ;
+import java.util.*;
+import com.entity.*;
+			
+		
+public class CustomerFeedbackBAO
+{
+			CustomerFeedbackDAO dao = new CustomerFeedbackDAO();
+			
+			//Below method is for entering Customer Feedback
+			
+			public boolean InsertCustomerFeedback(CustomerFeedback entity) throws SQLException,Exception
+			{
+				
+				try{
+				
+				if(carNo <= 0)
+					throw new Exception("Please enter a valid Car number");
+				
+				if(feedbackNo <= 0)	
+					throw new Exception("Pllease enter a valid Feedback number!");
+				
+				if(feedback == null)	
+					throw new Exception("Mandatory Field : Feedback cannot be empty!");
+
+				if(rating <=0 )	
+					throw new Exception("Mandatory Field : Rating cannot be empty!");
+	
+				}	
+
+				catch(SQLException se)
+				{
+					se.printStackTrace();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+				return dao.InsertCustomerFeedback(entity);
+			}
+}
+				
+				
+				

@@ -1,0 +1,50 @@
+package com.Entity;
+
+public class InvoiceEntity {
+	private int invoiceNo;
+	private String billDate;
+	private int customerID;
+	private int empID;
+	private double totalAmount;
+	private String payMode;
+	public int getInvoiceNo() {
+		return invoiceNo;
+	}
+	public void setInvoiceNo(int invoiceNo) {
+		this.invoiceNo = invoiceNo;
+	}
+	public String getBillDate() {
+		return billDate;
+	}
+	public void setBillDate(String billDate) {
+		this.billDate = billDate;
+	}
+	public int getCustomerID() {
+		return customerID;
+	}
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
+	}
+	public int getEmpID() {
+		return empID;
+	}
+	public void setEmpID(int empID) {
+		this.empID = empID;
+	}
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	public String getPayMode() {
+		return payMode;
+	}
+	public void setPayMode(String payMode) {
+		this.payMode = payMode;
+	}
+	
+	
+
+}
+

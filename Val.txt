@@ -1,0 +1,201 @@
+--Validating password , email , mobno , DOB
+
+==================================================================================
+
+package UdExxceptions;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.*;
+public class MobValEx extends Exception
+{
+    public MobValEx()
+    {
+        // Call constructor of parent Exception
+        super("Enter valid mobile number (Mobile number should contain 10 digits)");
+    }
+    public void MobVal(long mobno) throws MobValEx {
+  	  try
+  	  {
+  	  String stringmob = Long.toString(mobno);
+        Pattern pattern = Pattern.compile("\\d{10}");
+        Matcher matcher = pattern.matcher(stringmob);
+
+        //Pattern pattern1 = Pattern.compile("\\d{3}-\\d{7}"); For other patterns follow this.
+        //Matcher matcher1 = pattern.matcher(stringmob);
+
+        if (!(matcher.matches())) {
+        	throw new MobValEx();
+      	  //System.out.println("Phone Number Valid");
+        }
+       /* else
+        {
+      	  throw new MobValEx();
+        }*/
+  	  }
+        catch(MobValEx me)
+        {
+      	me.printStackTrace();
+        }
+  	  }
+}
+
+=================================================================================================
+
+package UdExxceptions;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class DOBEx extends Exception
+{
+    public DOBEx()
+    {
+        // Call constructor of parent Exception
+        super("Enter valid Date Of Birth ( It should be of the format : dd/mmm/yyyy )");
+    }
+    public void DOBVal(String DOB) throws DOBEx {
+    	  try
+    	  {
+    	  if (!(DOB.matches("([0-9]{2})/([a-z,A-Z]{3})/([0-9]{4})")))
+    	  {
+    		  throw new DOBEx();
+    		  //System.out.println("Valid");
+
+          }
+         /* else
+          {
+        	  throw new DOBEx();
+          }*/
+    	  }
+          catch(DOBEx me)
+          {
+        	me.printStackTrace();
+          }
+    	  }
+}
+
+===========================================================================================================
+
+package UdExxceptions;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class EmailEx extends Exception
+{
+	private Pattern pattern;
+	private Matcher matcher;
+	private String EMAIL_PATTERN =
+		"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    public EmailEx()
+    {
+        // Call constructor of parent Exception
+        super("Enter valid Email ID");
+    }
+    public void EmailVal(String Email) throws EmailEx {
+  	  try
+  	  {
+  		pattern = Pattern.compile(EMAIL_PATTERN);
+  		Matcher matcher = pattern.matcher(Email);
+  	    if (!( matcher.matches()))
+  	    {
+  	    	throw new EmailEx();
+  	    	//System.out.println("Valid");
+
+        }
+       /* else
+        {
+      	  throw new EmailEx();
+        }*/
+  	  }
+        catch(EmailEx me)
+        {
+      	me.printStackTrace();
+        }
+  	  }
+}
+
+==========================================================================================
+
+package UdExxceptions;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class PwdEx extends Exception
+{
+	private Pattern pattern;
+	private Matcher matcher;
+	private String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
+
+    public PwdEx()
+    {
+        // Call constructor of parent Exception
+        super("Enter valid Password ( must contain atleast one lowercase character,one uppercase charactersone digit from 0-9,one special symbol)");
+    }
+    public void PwdVal(String Password) throws PwdEx {
+  	  try
+  	  {
+  		pattern = Pattern.compile(PASSWORD_PATTERN);
+  		Matcher matcher = pattern.matcher(Password);
+  	    if (!( matcher.matches()))
+  	    {
+  	    	throw new PwdEx();
+  	    	//System.out.println("Valid Password");
+        }
+       // else
+        //{
+      	  //throw new PwdEx();
+        //}
+  	  }
+        catch(PwdEx me)
+        {
+      	me.printStackTrace();
+        }
+  	  }
+}
+
+======================================================================================================================
+
+Use Case :
+
+import java.util.Scanner;
+
+import UdExxceptions.DOBEx;
+import UdExxceptions.MobValEx;
+import UdExxceptions.EmailEx;
+import UdExxceptions.PwdEx;
+public class MainClass {
+	public static void main(String[] args){
+	MobValEx mv = new MobValEx();
+	DOBEx db = new DOBEx();
+	EmailEx eb = new EmailEx();
+	PwdEx pw = new PwdEx();
+
+	long MobileNo;
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter Mobile Number");
+	MobileNo = s.nextLong();
+	//System.out.println("Enter Date of Birth");
+	//System.out.println("Enter Mail ID");
+	//String Email = s.next();
+	// System.out.println("Enter Password");
+	 //String Pwd = s.next();
+	try{
+		mv.MobVal(MobileNo);
+		//pw.PwdVal(Pwd);
+	}
+	//catch(PwdEx e){
+		//e.printStackTrace();
+	//}
+	catch(MobValEx es){
+		es.printStackTrace();
+	}
+	}
+}
+
+================================================================================================
+
+
+
+
+
