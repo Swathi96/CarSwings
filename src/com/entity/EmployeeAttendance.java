@@ -1,7 +1,14 @@
 package com.entity;
 
 public class EmployeeAttendance {
-	int cusid;
+	int cusid;String adate;
+	
+	public String getAdate() {
+		return adate;
+	}
+	public void setAdate(String adate) {
+		this.adate = adate;
+	}
 	public int getCusid() {
 		return cusid;
 	}

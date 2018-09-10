@@ -1,0 +1,21 @@
+Introduction  
+
+Automobile Management System is a desktop-based application used by automobile showroom which is developed in java using swings, class based, object oriented programming.  Maintenance of  the company’s progress in terms of production, sales, customer feedback, employee’s attendance and other necessary details helps the business to consistently hit, and even surpass the existing limitations. However, maintaining these records manually is a tedious task and depending on the organizations employment growth it might be impossible. Thus, this system helps in preserving, classifying, categorizing and regulating the organization’s essential details in a very systematic and efficient way. 
+
+1.1 Purpose  
+
+To understand the layer architecture, User Interface (UI), Business access object(BAO), data access object(DAO) and entity.  
+
+User Interface (UI) is the means by which the user and a computer system interact, in particular the use of input devices and software. 
+
+BAO or the business access object is to validate the imputs entered by the user. 
+
+DAO or Data access object  is an object that provides an abstract interface to some type of database or other persistence mechanism. By mapping application calls to the persistence layer, the DAO provides some specific data operations without exposing details of the database. It separates what data access the application needs, in terms of domain-specific objects and data types, from how these needs can be satisfied with a specific DBMS, database schema, etc.  
+
+Entity is repsonsible for communication among various layers of the architecture. 
+
+ 
+
+1.2 Scope: 
+
+ 
