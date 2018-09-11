@@ -1,0 +1,29 @@
+package com.ui;
+
+import java.awt.*;
+
+import javax.swing.*;
+
+public class DealerReport extends JFrame {
+    private JLabel lblDealerReport = new JLabel();
+    private JTable tDealerreport = new JTable();
+
+    public DealerReport() {
+        try {
+            jbInit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void jbInit() throws Exception {
+        this.getContentPane().setLayout( null );
+        this.setSize(new Dimension(682, 537));
+        lblDealerReport.setText("Dealer Report");
+        lblDealerReport.setBounds(new Rectangle(240, 35, 320, 50));
+        lblDealerReport.setFont(new Font("Times New Roman", 1, 35));
+        tDealerreport.setBounds(new Rectangle(55, 125, 565, 340));
+        this.getContentPane().add(tDealerreport, null);
+        this.getContentPane().add(lblDealerReport, null);
+    }
+}

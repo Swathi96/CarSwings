@@ -1,0 +1,25 @@
+package com.UI;
+
+public class EmployeeSalesReport extends JFrame {
+    private JLabel lblEmployeeSalesreport = new JLabel();
+    private JTable tEmployeeSales = new JTable();
+
+    public EmployeeSalesReport() {
+        try {
+            jbInit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void jbInit() throws Exception {
+        this.getContentPane().setLayout( null );
+        this.setSize(new Dimension(655, 538));
+        lblEmployeeSalesreport.setText("Employee Sales Report");
+        lblEmployeeSalesreport.setBounds(new Rectangle(140, 35, 360, 50));
+        lblEmployeeSalesreport.setFont(new Font("Times New Roman", 1, 35));
+        tEmployeeSales.setBounds(new Rectangle(60, 125, 535, 345));
+        this.getContentPane().add(tEmployeeSales, null);
+        this.getContentPane().add(lblEmployeeSalesreport, null);
+    }
+}

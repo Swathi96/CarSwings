@@ -124,4 +124,30 @@ try {
 		return null;
 	}
 
+	public ArrayList<Integer> getemployeeid()throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			//System.out.println("invoice no  "+ ie.getInvoiceno()+"cust id " + ie.getCusid()+ "oid"+ ie.getOid()+" amount" + ie.getAmount()+"  status:" + ie.getStatus());
+			Class.forName("com.mysql.jdbc.Driver");
+			String query="select empid from customerfeedback";
+			con=DriverManager.getConnection("jdbc:mysql://localhost:4000/Cars","root","root123");
+			s=con.createStatement();
+			rst=s.executeQuery(query);
+			ArrayList<Integer> al=new ArrayList<>();
+			while(rst.next()){
+				int empid=rst.getInt(1);
+				al.add(empid);
+			}
+			return al;
+		
+			
+		}
+			catch(SQLException e1){
+				System.out.println("no employees");
+				e1.printStackTrace();
+				
+				}
+		return null;
+	}
+	
 }
